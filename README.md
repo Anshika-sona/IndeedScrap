@@ -11,7 +11,7 @@ Job Listings Scraper is a Python-based web scraping tool that extracts job listi
 ## Screenshots
 
 ### Script Output
-![Script Output](Screenshot 2024-05-29 104401.png)
+![Script Output](IndeedScrape1.png)
 
 ## Installation
 
