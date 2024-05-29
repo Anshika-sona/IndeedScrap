@@ -1,52 +1,69 @@
-Sure, here's a basic template for your GitHub README.md file:
+# Job Listings Scraper
 
-```markdown
-# Indeed Job Scraper
+Job Listings Scraper is a Python-based web scraping tool that extracts job listings from Indeed based on user-provided skills and location. The script collects data such as job title, company, location, posting date, and the application link, and saves it into a CSV file for easy analysis and reference.
 
-This Python script scrapes job listings from Indeed based on the specified skill and location, and saves the data to a CSV file.
+## Features
 
-## Prerequisites
+- Scrapes job listings from Indeed based on specified skills and location.
+- Extracts relevant details about each job.
+- Saves the data into a CSV file for easy reference.
 
-- Python 3.x
-- BeautifulSoup (bs4)
-- Requests
+## Screenshots
+
+### Script Output
+![Script Output](Screenshot 2024-05-29 104401.png)
 
 ## Installation
 
 1. Clone the repository:
 
-   ```bash
-   git clone https://github.com/your_username/indeed-job-scraper.git
-   ```
+    ```bash
+    git clone https://github.com/your-username/job-listings-scraper.git
+    cd job-listings-scraper
+    ```
 
-2. Navigate to the project directory:
+2. Create a virtual environment and activate it:
 
-   ```bash
-   cd indeed-job-scraper
-   ```
+    ```bash
+    python -m venv venv
+    source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+    ```
 
-3. Install the required dependencies:
+3. Install the required packages:
 
-   ```bash
-   pip install -r requirements.txt
-   ```
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+4. Run the script:
+
+    ```bash
+    python scraper.py
+    ```
 
 ## Usage
 
-1. Run the script:
+1. When prompted, enter the skill you're looking for.
+2. Enter the location for the job search.
+3. Enter the number of pages you want to scrape.
+4. The script will fetch the job listings, extract the required details, and save them into a CSV file named `{Skill}_{Location}_Jobs.csv`.
 
-   ```bash
-   python indeed_job_scraper.py
-   ```
+## Code Explanation
 
-2. Follow the prompts to enter the skill, location, and number of pages to scrape.
+The script performs the following steps:
 
-3. The script will scrape job listings from Indeed and save them to a CSV file in the project directory.
+1. **Fetch the webpage**: The script sends a request to Indeed with the specified skill and location and fetches the HTML content.
+2. **Parse HTML**: It uses BeautifulSoup to parse the HTML content.
+3. **Extract Data**: The script finds all job listings and extracts details such as job title, company, location, posting date, and application link.
+4. **Save Data**: The extracted data is saved into a CSV file using the `csv` module.
 
-## License
+## Requirements
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-```
+- `requests`
+- `beautifulsoup4`
 
-You can customize this README according to your project's specific details and requirements. Make sure to replace placeholders like `your_username`, `indeed-job-scraper`, and `LICENSE` with appropriate values.
+You can install the required packages using:
+
+```bash
+pip install requests beautifulsoup4
 
